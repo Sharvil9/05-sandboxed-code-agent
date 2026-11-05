@@ -12,7 +12,7 @@ Build a small AI programming agent that proposes standalone Python functions or 
 - `benchmarks/`: fixed, reviewed development and evaluation suites.
 - `results/`: sanitized, reproducible evaluation evidence.
 - `make check`: compile and run the test suite.
-- `make sandbox-test`: add when the real container runner is implemented.
+- `make sandbox-test`: builds the pinned runtime and requires an effective local Docker sandbox before running real boundary tests.
 - `make demo`: add when the CLI workflow is implemented.
 
 ## Trust boundaries

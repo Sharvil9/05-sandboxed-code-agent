@@ -22,9 +22,12 @@ python -m pip install -e '.[dev]'
 
 ```sh
 make check
+make sandbox-test
 ```
 
-The real Docker boundary tests and end-to-end demo command are added with their implementation milestones. See [PLAN.md](PLAN.md) for current progress and [SPEC.md](SPEC.md) for the trust model and acceptance criteria.
+`make sandbox-test` builds the digest-pinned runtime image and executes controlled integration checks against the local Docker engine. It does not download or invoke a model. See [PLAN.md](PLAN.md) for current progress and [SPEC.md](SPEC.md) for the trust model and acceptance criteria.
+
+The runner refuses to execute candidates unless its in-container probe confirms the configured resource limits are effective. `make sandbox-test` exits nonzero when that readiness gate fails. The current cloud Docker engine does not delegate those cgroup limits, so candidate execution remains blocked here; the exact measurements are recorded in [PLAN.md](PLAN.md).
 
 ## Security boundary
 
