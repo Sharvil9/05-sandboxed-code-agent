@@ -1,0 +1,30 @@
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+build/
+dist/
+*.egg-info/
+
+# Generated execution data and model artifacts
+runs/
+reports/
+outputs/
+artifacts/
+models/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
